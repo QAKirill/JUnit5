@@ -18,9 +18,9 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class GoogleTranslateTests {
     public static Map<String, String> map = Map.of(
-            "Футбол", "Football",
-            "Хоккей", "Hockey",
-            "Шахматы", "Chess"
+            "Р¤СѓС‚Р±РѕР»", "Football",
+            "РҐРѕРєРєРµР№", "Hockey",
+            "РЁР°С…РјР°С‚С‹", "Chess"
     );
 
     private static Stream<Arguments> getKeyValue() {
@@ -47,8 +47,8 @@ public class GoogleTranslateTests {
             @Tag("search")
     })
 
-    @DisplayName("Проверка перевода в GoogleTranslate")
-    @ParameterizedTest(name = "Результат перевода {0} на английский {1}")
+    @DisplayName("РџСЂРѕРІРµСЂРєР° РїРµСЂРµРІРѕРґР° РІ GoogleTranslate")
+    @ParameterizedTest(name = "Р РµР·СѓР»СЊС‚Р°С‚ РїРµСЂРµРІРѕРґР° {0} РЅР° Р°РЅРіР»РёР№СЃРєРёР№ {1}")
     @MethodSource("getKeyValue")
     void searchResultsShouldNotBeEmpty(String key, String value){
         $(".er8xn").setValue(key);
